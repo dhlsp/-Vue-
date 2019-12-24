@@ -6,7 +6,7 @@
         <div class="index-left-block">
           <h2>旅行资讯</h2>
           <div class="container-list pic_news">
-            <div v-for='inf in informationData' :key="inf" v-if='inf.img'>
+            <div v-for='inf in informationData' :key="inf" v-show='inf.img'>
               <img :src="inf.img" :alt="inf.title">
               <h3>
                 <a href="javascript:void(0);">{{inf.title}}</a>
@@ -14,7 +14,7 @@
               <p>{{inf.msg}}</p>
             </div>
             <ul>
-              <li v-for='inf in informationData' v-if='!inf.img' :key="inf">
+              <li v-for='inf in informationData' v-show='!inf.img' :key="inf">
                 <span>{{inf.time}}</span>
                 <a href="javascript:void(0);">【{{inf.title}}】</a>
               </li>
@@ -70,7 +70,7 @@
             </el-aside>
             <el-main class="fiery-activity-main">
               <el-row>
-                <el-col :span="11" v-for="list in sellWellDt" :key="list.id" v-if="list.id<3">
+                <el-col :span="11" v-for="list in sellWellDt" :key="list.id" v-show="list.id<3">
                   <div class="grid-content">
                     <a target="_blank" :href="list.href">
                       <img :src="list.img" :alt="list.title">
@@ -93,7 +93,7 @@
                 </el-col>
               </el-row>
               <el-row>
-                <el-col :span="11" v-for="list in sellWellDt" :key="list.id" v-if="list.id>2">
+                <el-col :span="11" v-for="list in sellWellDt" :key="list.id" v-show="list.id>2">
                   <div class="grid-content">
                     <a target="_blank" :href="list.href">
                       <img :src="list.img" :alt="list.title">
